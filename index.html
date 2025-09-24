@@ -6,7 +6,6 @@
     <title>Brisa - Monitoramento Ambiental</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div id="welcome-screen" class="screen active">
@@ -24,6 +23,7 @@
                 <i class="fas fa-leaf"></i> BRISA
             </h1>
             <p class="subtitle">Dados ambientais em tempo real</p>
+            <p id="current-datetime" class="subtitle"></p>
         </div>
 
         <div class="controls">
@@ -38,7 +38,7 @@
         <div id="data-container" class="data-container">
             <div class="title-and-refresh">
                 <h2>
-                    <i class="fas fa-chart-line"></i> Dados Ao Vivo
+                    <i class="fas fa-chart-line"></i> Dados
                 </h2>
                 <button id="refresh-btn" class="refresh-btn">
                     <i class="fas fa-sync-alt"></i>
@@ -68,15 +68,6 @@
                     <p id="gas-value">-%</p>
                 </div>
             </div>
-        </div>
-
-        <div id="chart-container" class="chart-container">
-            <div class="title-and-refresh">
-                <h2 id="chart-title">
-                    <i class="fas fa-chart-line"></i> Histórico
-                </h2>
-            </div>
-            <canvas id="data-chart"></canvas>
         </div>
     </div>
 
