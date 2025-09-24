@@ -1,5 +1,5 @@
 // Substitua 'URL_DO_SEU_APPS_SCRIPT' pelo URL de implantação do seu script.
-const appsScriptUrl = 'URL_DO_SEU_APPS_SCRIPT';
+const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbxPO4_JBQ2VxQCu1FnrPNSIc2S1GnjkggYeOuObDSvz1m7Vg0lLbAaPhgyKM6LCRGRLFA/exec';
 let liveDataInterval;
 let currentPeriod = 'live';
 let myChart;
