@@ -198,4 +198,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         startLiveMonitoring();
     });
+    // --- Função para o Relógio em Tempo Real ---
+function updateDateTime() {
+    const now = new Date();
+    const formattedDate = now.toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+    const formattedTime = now.toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+
+    const dateTimeString = `${formattedDate} ${formattedTime}`;
+    document.getElementById('current-datetime').textContent = dateTimeString;
+}
+
+// Atualiza a data e hora imediatamente ao carregar a página
+updateDateTime();
+
+// Atualiza a data e hora a cada segundo (1000 milissegundos)
+setInterval(updateDateTime, 1000);
 });
