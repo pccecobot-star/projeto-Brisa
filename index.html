@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brisa - Monitoramento Ambiental</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="welcome-screen" class="screen active">
+        <div class="welcome-content">
+            <i class="fas fa-wind fa-spin"></i>
+            <h1>Bem-vindo ao Brisa</h1>
+            <p>Sua estação de monitoramento de dados ambientais.</p>
+            <button id="start-btn" class="start-btn hidden">Iniciar</button>
+        </div>
+    </div>
+
+    <div id="main-dashboard" class="screen">
+        <div class="dashboard-header">
+            <h1 class="logo-text">
+                <i class="fas fa-leaf"></i> BRISA
+            </h1>
+            <p class="subtitle">Dados ambientais em tempo real</p>
+        </div>
+
+        <div class="controls">
+            <button class="period-btn active" data-period="live">AO VIVO</button>
+            <button class="period-btn" data-period="day">1 DIA</button>
+            <button class="period-btn" data-period="week">7 DIAS</button>
+            <button class="period-btn" data-period="month">1 MÊS</button>
+            <button class="period-btn" data-period="sixMonths">6 MESES</button>
+            <button class="period-btn" data-period="year">1 ANO</button>
+        </div>
+
+        <div id="data-container" class="data-container">
+            <div class="title-and-refresh">
+                <h2>
+                    <i class="fas fa-chart-line"></i> Dados Ao Vivo
+                </h2>
+                <button id="refresh-btn" class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+            
+            <div class="data-grid">
+                <div class="data-item temp">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>Temperatura</h3>
+                    <p id="temp-value">-°C</p>
+                </div>
+                <div class="data-item humidity">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Umidade</h3>
+                    <p id="humidity-value">-%</p>
+                </div>
+                <div class="data-item gas">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-smog"></i>
+                    </div>
+                    <h3>Gás</h3>
+                    <p id="gas-value">-%</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="chart-container" class="chart-container">
+            <div class="title-and-refresh">
+                <h2 id="chart-title">
+                    <i class="fas fa-chart-line"></i> Histórico
+                </h2>
+            </div>
+            <canvas id="data-chart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
